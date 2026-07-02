@@ -15,7 +15,7 @@ _G.fileManager = fileManager
 _G.menu = menu
 
 -- ---- SOURCE SUB-CONFIGS ----
--- Each require() runs in its own protected scope, so errors in one won't kill the others.
+
 require("conf/screen")
 require("conf/shortcuts")
 
@@ -58,6 +58,9 @@ hl.config({
 		kb_layout = "us",
 		kb_variant = "altgr-intl",
 	},
+	render = {
+		cm_auto_hdr = true,
+	},
 })
 
 -- ---- CURSOR ----
@@ -67,6 +70,11 @@ hl.config({
 		no_hardware_cursors = true,
 	},
 })
+
+-- ---- Drivers ----
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("GBM_BACKEND", "nvidia-drm")
 
 -- ---- ANIMATIONS ----
 hl.config({
