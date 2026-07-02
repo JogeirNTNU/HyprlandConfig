@@ -17,10 +17,7 @@ hl.monitor({
 	position = "1920x560",
 	scale = 1,
 	bitdepth = 10,
-	cm = "hdr", -- "hdr" or "srgb"
-	icc = "/usr/share/color/icc/XG27AQDMG_custom.icc",
-	sdrbrightness = 3,
-	sdrsaturation = 1.4,
+	cm = "srgb",
 })
 
 -- Vertical screen (DP-2), rotated 270° (transform 3)
