@@ -20,13 +20,7 @@ require("conf/screen")
 require("conf/shortcuts")
 require("conf/popupfix")
 
--- ---- WORKSPACE → MONITOR ASSIGNMENTS ----
-hl.workspace_rule({ workspace = "1", monitor = "HDMI-A-1" })
-hl.workspace_rule({ workspace = "2", monitor = "DP-1" })
-hl.workspace_rule({ workspace = "3", monitor = "DP-2" })
-
 -- ---- AUTOSTART ----
--- (was: exec-once = ...)
 hl.on("hyprland.start", function()
 	-- Propagate Wayland env to systemd/dbus
 	hl.dispatch(hl.dsp.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"))
@@ -34,7 +28,6 @@ hl.on("hyprland.start", function()
 	hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/conf/blue_yeti_fix.sh"))
 	hl.dispatch(hl.dsp.exec_cmd("waybar"))
 	hl.dispatch(hl.dsp.exec_cmd("hyprpaper")) -- remove if using animated/moving wallpapers
-	-- hl.dispatch(hl.dsp.exec_cmd("discord"))
 	hl.dispatch(hl.dsp.exec_cmd("steam"))
 	hl.dispatch(hl.dsp.exec_cmd("vesktop"))
 	hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/fix-dp1.sh"))
@@ -44,13 +37,11 @@ end)
 hl.window_rule({
 	name = "windowrule-1",
 	match = { class = "^(Vesktop)" },
-	workspace = "3",
 })
 
 hl.window_rule({
 	name = "windowrule-2",
 	match = { class = "^(steam)" },
-	workspace = "1",
 })
 
 -- ---- INPUT ----
