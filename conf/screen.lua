@@ -32,6 +32,6 @@ hl.monitor({
 -- Enable variable refresh rate: 0 = off, 1 = always, 2 = fullscreen only
 hl.config({
 	misc = {
-		vrr = 0,
+		vrr = 2,
 	},
 })
