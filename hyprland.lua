@@ -18,6 +18,7 @@ _G.menu = menu
 
 require("conf/screen")
 require("conf/shortcuts")
+require("conf/popupfix")
 
 -- ---- WORKSPACE → MONITOR ASSIGNMENTS ----
 hl.workspace_rule({ workspace = "1", monitor = "HDMI-A-1" })
