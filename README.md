@@ -1,2 +1,1 @@
-# HyprlandConfig
-# HyprlandConfig
+# DEPRECATED
